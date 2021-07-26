@@ -1,0 +1,67 @@
+<div *ngIf="animales.length > 0">
+  <div class="mat-elevation-z8" class="tam">
+    <mat-toolbar>
+      <span>Mis Animales</span>
+      <button mat-fab color="primary" class = "tam1" matTooltip="Agregar nuevo animal" routerLink = "/dashboard/crear-animal">
+        <mat-icon> add</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-form-field appearance="standard">
+      <mat-label>Filtro</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese su búsqueda" #input>
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="nombreAnimal">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombreAnimal}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="edad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Edad </th>
+        <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="raza">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Raza </th>
+        <td mat-cell *matCellDef="let element"> {{element.raza}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tamano">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tamaño</th>
+        <td mat-cell *matCellDef="let element"> {{element.tamano}} </td>
+      </ng-container>
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element; let i = index" style="text-align: right;">
+          <a class="pointer" matTooltip="Ver animal">
+            <mat-icon>search</mat-icon>
+          </a>
+          <a class="pointer" matTooltip="Editar">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <a class="pointer" (click)="eliminarAnimal(i)" style="color: brown;" matTooltip="Eliminar">
+            <mat-icon>delete</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+  </div>
+</div>
+<h2 *ngIf = "animales.length == 0" class = "tam"> No hay animales por mostrar</h2>

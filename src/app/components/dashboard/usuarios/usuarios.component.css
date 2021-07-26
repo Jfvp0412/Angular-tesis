@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+}
+th
+{
+    width: 10%;
+}
+.pointer 
+{
+    cursor: pointer;
+}
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+.tam 
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.example-spacer 
+{
+    flex: 1 1 auto;
+}
+.tam1 
+{
+    margin-left: auto;
+}

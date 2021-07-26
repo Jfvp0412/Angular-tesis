@@ -1,0 +1,11 @@
+<mat-toolbar color ="primary">
+    <span>My Pet</span>
+    <button mat-button *ngFor = "let item of menu" [routerLink] = "item.redirect">{{item.nombre}}</button><!--ngfor es para correr un array-->
+    <span class="example-spacer"></span>
+    <button mat-icon-button>
+        <mat-icon>logout</mat-icon>
+    </button>
+    
+</mat-toolbar>
+
+    

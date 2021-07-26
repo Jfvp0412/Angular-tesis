@@ -1,0 +1,61 @@
+<div>
+    <mat-toolbar>
+        <span>Crear animal</span>
+    </mat-toolbar>
+    <mat-card styles="margin-top: 10px;">Ingrese los datos del animal
+        <form>
+            <mat-grid-list cols="4" rowHeight="70px">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Nombre del animal xd</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="3" [rowspan]="6" [style.background]="'lightgreen'">
+                    Imagen animal
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field appearance="fill" class="ancho">
+                        <mat-label>Edad</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let item of edad" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field appearance="fill" class="ancho">
+                        <mat-label>Tipo</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let item of tipo" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightgreen'">
+                    Raza
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightgreen'">
+                    Tamaño
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightgreen'">
+                    Botón de aceptar y volver
+                </mat-grid-tile>
+            </mat-grid-list>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <mat-grid-list cols="4" rowHeight="100px">
+                <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+                    [style.background]="tile.color">
+                    {{tile.text}}
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>

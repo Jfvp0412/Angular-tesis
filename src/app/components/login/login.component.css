@@ -1,0 +1,38 @@
+.body 
+{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.login
+{
+    width: 100%;
+    max-width: 330px;
+    text-align: center;
+}
+.ancho 
+{
+    width: 80%;
+
+}
+.tituloInicial 
+{
+    font-size: 35px;
+    font: papyrus;
+}
+.button
+{
+    height: 50px;
+}
+.spinner 
+{
+    margin: 0 auto;
+}
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+.colorLabel 
+{
+    color: grey;
+}

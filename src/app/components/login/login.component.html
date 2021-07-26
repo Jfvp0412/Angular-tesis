@@ -1,0 +1,26 @@
+<div class="body" body >
+    <div class="login">
+        <mat-spinner *ngIf = "loading " class = "spinner" diameter = "50"></mat-spinner>
+        <form *ngIf = "!loading" [formGroup] = "form" (ngSubmit) = "ingresar()"> <!--este form hace referencia a la propiedad for del login component ts-->
+            <h2 class ="tituloInicial">Bienvenido a my Pet</h2>
+            <img src="../../../assets/Images/pet-house.png" width= "50%">
+            <h1>Iniciar sesión</h1>
+            <label class = "colorLabel">Escoja el tipo de usuario a iniciar sesión</label>
+            <h1></h1>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Fundación</mat-radio-button>
+                <mat-radio-button value="2">Adoptante</mat-radio-button>
+              </mat-radio-group>
+            <mat-form-field class = "ancho" appearance="fill" >
+                <mat-label>Ingrese su usuario</mat-label>
+                <input matInput autocomplete="off" formControlName ="usuario"> <!--este usuario hace referencia a la propiedad usuario del login component ts-->
+            </mat-form-field>
+            <mat-form-field class = "ancho" appearance="fill">
+                <mat-label>Ingrese su contraseña</mat-label>
+                <input type = "password" matInput autocomplete="off" formControlName ="contrasena">
+            </mat-form-field>
+            <button  type = "submit" class = "ancho button" mat-raised-button color="primary" [disabled] = "form.invalid">ingresar</button>
+        </form>
+    </div>
+</div>
+
