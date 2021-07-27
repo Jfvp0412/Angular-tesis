@@ -1,0 +1,81 @@
+<div>
+    <mat-toolbar color="primary">
+        <span> Creación de cuenta - adoptante</span>
+    </mat-toolbar>
+    <div class= "margen">
+        <mat-card>
+            <div class="centro">
+                <h2>Ingrese los datos solicitados</h2>
+                <img src = "../../../assets/Images/adopt.png" width= "15%">
+            </div>
+            <form>
+                <mat-grid-list cols="2" rowHeight="60px">
+                    <mat-grid-tile [colspan]="1" [rowspan]="1">
+                        <mat-form-field class="ancho">
+                            <mat-label>Nombre(s)</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1">
+                        <mat-form-field class="ancho">
+                            <mat-label>Apellidos</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1">
+                        <mat-form-field class="ancho" appearance="fill">
+                            <mat-label>Fecha de nacimiento</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi #picker></mat-datepicker>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1">
+                        <mat-form-field appearance="fill" class="ancho">
+                            <mat-label>Género</mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let item of genero" [value]="item">
+                                    {{item}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1">
+                        <mat-form-field appearance="fill" class="ancho">
+                            <mat-label>Localidad</mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let item of localidad" [value]="item">
+                                    {{item}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1">
+                        <mat-form-field class="ancho">
+                            <mat-label>Correo electrónico</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                            <mat-form-field class="ancho">
+                              <mat-label>Número de celular</mat-label>
+                              <span matPrefix>+57 &nbsp;</span>
+                              <input type="tel" matInput placeholder="555-555-1234">
+                            </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                        <mat-form-field class="ancho">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <div class = "centro">
+                    <button mat-raised-button color="primary" style="margin: 16px;" class = "tamano">Crear cuenta</button>
+                    <button mat-raised-button color="accent" class = "tamano">Cancelar</button>
+                </div>
+                
+            </form>
+        </mat-card>
+    </div>
+</div>

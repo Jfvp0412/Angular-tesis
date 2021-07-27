@@ -9,11 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Componentes
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
+import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
+import { CrearAdoptanteComponent } from './components/crear-cuenta/crear-adoptante/crear-adoptante.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    CrearCuentaComponent,
+    CrearAdoptanteComponent
   ],
   imports: [
     BrowserModule,

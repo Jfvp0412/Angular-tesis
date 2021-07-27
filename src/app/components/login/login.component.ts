@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
+  cuentaNueva = false;
   constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router)
   {
     this.form = this.fb.group ({
@@ -58,5 +59,10 @@ export class LoginComponent implements OnInit {
     {
       this.router.navigate(['dashboard']);
     },1500)
+  }
+  crearCuenta()
+  {
+    this.cuentaNueva = true
+    this.router.navigate(['crear-cuenta']);
   }
 }

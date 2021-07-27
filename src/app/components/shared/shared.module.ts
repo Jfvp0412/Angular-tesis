@@ -21,6 +21,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 
@@ -48,7 +51,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatCardModule,
     MatGridListModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatSliderModule,
@@ -68,7 +73,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatCardModule,
     MatGridListModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,20 @@
+.centro
+{
+    text-align: center;
+}
+.ancho
+{
+    width: 90%;
+}
+.margen 
+{
+   height: 1120px;
+   width: 1120px;
+   margin: auto;
+}
+.tamano 
+{
+    text-align: center;
+    width: 120px;
+    height: 35px;
+}
